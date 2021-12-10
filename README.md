@@ -7,3 +7,4 @@ first line # devops-netology
            # Файлы с окончанием override.tf и override.tf.json будут игнорироваться
            # Если будет нужно можем пропустить некторорые файлы override.tv с помощью знака !
            # Файл terraform.rc будет игнорироваться 
+           #test tag
