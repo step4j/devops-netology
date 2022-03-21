@@ -110,3 +110,20 @@ The key's randomart image is:
 +----[SHA256]-----+
 
 ```
+
+cat ~/.ssh/id_rsa.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqjclPoETEV+EYtkwT9HCXHJCkn+KtVR3HBDem2T7/iV/U0SZ/dJrbKRyHqyDYqG+5ohf6+ScF2fIvg27m3fNJChXoF1rk5ZHynN9bqzu0xJKrak7eZ6Jqc331ZCf3foibugXeGtM+oYbGIXbpDPxrNpcVfeweGkR9i3FSSixg9h7X1IKnNbWYac/izNkfQBWHWOMiK8fdD8i1LbI48At/F5DBGTEiamhL7hqxESdKCQK55k065YgTEV2rxLQV5sn6+MuD7kOrb9yu4qXCWMh/KLIWYohr2CYmWe+UhdyPp6wePa61+Fxl+k1FK3CIENPEejDnFYw+SE3YVJrxXHX60IqzxlUupzs0+w6fFSy+rZOC2dSZ8EbKEWvZBeJCXORi5qmTyG7ByANcyOggqHNlRc/AeLp7rNXonSjuC4glW5U6QLRGftZAkOQz496oTB20Uf3AVKd1GKJ6RX8lF2XozIld7xu2mFIIjgYJatFJzTu0y98mj2vLDatiYO+I3DU= vagrant@vagrant
+
+на другом сервере - 
+
+cd .ssh
+
+sudo nano authorized_keys 
+
+Вставляем ключ из вывода id_rsa.pub
+
+ssh vagrant@192.168.0.108
+
+
+
