@@ -111,6 +111,8 @@ The key's randomart image is:
 
 ```
 
+```
+
 cat ~/.ssh/id_rsa.pub
 
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqjclPoETEV+EYtkwT9HCXHJCkn+KtVR3HBDem2T7/iV/U0SZ/dJrbKRyHqyDYqG+5ohf6+ScF2fIvg27m3fNJChXoF1rk5ZHynN9bqzu0xJKrak7eZ6Jqc331ZCf3foibugXeGtM+oYbGIXbpDPxrNpcVfeweGkR9i3FSSixg9h7X1IKnNbWYac/izNkfQBWHWOMiK8fdD8i1LbI48At/F5DBGTEiamhL7hqxESdKCQK55k065YgTEV2rxLQV5sn6+MuD7kOrb9yu4qXCWMh/KLIWYohr2CYmWe+UhdyPp6wePa61+Fxl+k1FK3CIENPEejDnFYw+SE3YVJrxXHX60IqzxlUupzs0+w6fFSy+rZOC2dSZ8EbKEWvZBeJCXORi5qmTyG7ByANcyOggqHNlRc/AeLp7rNXonSjuC4glW5U6QLRGftZAkOQz496oTB20Uf3AVKd1GKJ6RX8lF2XozIld7xu2mFIIjgYJatFJzTu0y98mj2vLDatiYO+I3DU= vagrant@vagrant
@@ -125,5 +127,56 @@ sudo nano authorized_keys
 
 ssh vagrant@192.168.0.108
 
+```
 
+***6. Переименуйте файлы ключей из задания 5. Настройте файл конфигурации SSH клиента, так чтобы вход на удаленный сервер осуществлялся по имени сервера.***
 
+Ответ - 
+```
+mv id_rsa.pub mykey.pub
+
+mv id_rsa  mykey
+
+ll
+
+total 24
+drwx------ 2 vagrant root    4096 Mar 23 14:56 ./
+drwxr-xr-x 7 vagrant vagrant 4096 Mar 22 17:52 ../
+-rw------- 1 vagrant vagrant  389 Mar 19 10:14 authorized_keys
+-rw-r--r-- 1 vagrant vagrant  444 Mar 22 16:18 known_hosts
+-rw------- 1 vagrant vagrant 2602 Mar 20 16:47 mykey.pub
+-rw-r--r-- 1 vagrant vagrant  569 Mar 20 16:47 mykey
+touch ~/.ssh/config
+
+nano ~/.ssh/config
+
+Host vagrant
+  Hostname 192.168.0.116
+  User test
+
+ssh vagrant
+
+test@192.168.0.116's password:
+
+```
+
+***7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.***
+
+Ответ - 
+```
+
+sudo tcpdump -c 100 -i enp0s3 -w 0001.pcap
+
+tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
+
+100 packets captured
+
+102 packets received by filter
+
+0 packets dropped by kernel
+
+sudo apt install wireshark
+
+```
+
+![wireshark](https://user-images.githubusercontent.com/95530808/159725741-1a3f10d0-7d4c-4ab2-8ea1-6f4dda681f59.PNG)
