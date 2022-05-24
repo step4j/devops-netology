@@ -23,3 +23,19 @@ Vagrant
 Ansible
 Приложить вывод команд установленных версий каждой из программ, оформленный в markdown.***
 
+Ответ:
+```
+vagrant --version
+
+Vagrant 2.2.6
+
+ansible --version
+
+ansible 2.9.6
+
+VirtualBox - 6.1.34
+```
+
+![version](https://user-images.githubusercontent.com/95530808/170075015-7d95a03a-1c52-4842-97e9-ffa804b3d615.PNG)
+
+
