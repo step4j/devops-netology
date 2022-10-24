@@ -31,7 +31,7 @@ stage
 ***4. Установка NGINX и Cerbot***
 Запущена роль для установки NGINX как reverse proxy с поддержкой TLS для обеспечения безопасности. Саму роль можно посмотреть
 
-reverse proxy
+[reverse proxy](/ansible/roles/reverse_proxy/tasks/main.yml)
 
 certbot
 
